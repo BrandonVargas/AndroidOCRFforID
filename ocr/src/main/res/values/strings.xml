@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Se necesita acceso a la camara para la detección</string>
+    <string name="no_camera_permission">La aplicacion no puede correr sin acceso a la camara.  La aplicación se cerrará ahora.</string>
+    <string name="low_storage_error">Las dependencias del OCR no pueden ser descargadas debido a la baja memoria del dispositivo</string>
+    <string name="title_activity_main">Ocr Detector</string>
+    <string name="read_text">Detect Text</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="ocr_success">Text read successfully</string>
+    <string name="ocr_failure">No text captured</string>
+    <string name="ocr_error">"Error reading text: %1$s"</string>
+    <string name="app_name">ocrforid</string>
+    <string name="tag_take_picture_2">Escanea Identificación (Frente)</string>
+    <string name="identify_document">Escanea Identificación (Reverso)</string>
+    <string name="indetify_document_2">Posiciona tu credencial dentro del recuadro</string>
+    <string name="ocr_fail">OCR Fallido. Por favor intente de nuevo.</string>
+</resources>

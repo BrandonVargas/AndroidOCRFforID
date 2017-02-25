@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:keepScreenOn="true"
+                android:orientation="vertical">
+
+    <mx.brandonvargas.ocrforid.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <mx.brandonvargas.ocrforid.camera.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </mx.brandonvargas.ocrforid.camera.CameraSourcePreview>
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:background="#CC000000"
+        android:alpha="100"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/image_view_clear"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_clear_white"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="finishActivity" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_flash_on"
+        android:layout_gravity="start|top"
+        android:id="@+id/image_view_flash"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="toggleFlash" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/tag_take_picture_2"
+        android:id="@+id/text_view_scan"
+        android:layout_gravity="center_horizontal|top"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/rl_view_detect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/view_top"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/view_detect"
+            app:layout_widthPercent="90%"
+            app:layout_aspectRatio="130%"
+            android:background="@drawable/detect_shape"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/left"
+            app:layout_widthPercent="9%"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/view_detect"
+            android:layout_toStartOf="@+id/view_detect"/>
+
+        <ImageView
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/view_detect"
+            android:layout_toRightOf="@+id/view_detect" />
+
+        <ImageView
+            android:id="@+id/top"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/right"
+            android:layout_toStartOf="@+id/right"
+            android:layout_toRightOf="@+id/left"
+            android:layout_toEndOf="@+id/left"
+            android:layout_above="@+id/view_detect"/>
+        <ImageView
+            android:id="@+id/bottom"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/right"
+            android:layout_toStartOf="@+id/right"
+            android:layout_toRightOf="@+id/left"
+            android:layout_toEndOf="@+id/left"
+            android:layout_below="@+id/view_detect"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/rl_ife_view_front"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/view_top"
+        android:visibility="gone">
+        <View
+            android:id="@+id/ife_view_front"
+            app:layout_widthPercent="90%"
+            app:layout_aspectRatio="160%"
+            android:layout_margin="2dp"
+            android:background="@drawable/ife_shape_front"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/left1"
+            app:layout_widthPercent="9%"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/ife_view_front"
+            android:layout_toStartOf="@+id/ife_view_front"/>
+
+        <ImageView
+            android:id="@+id/right1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/ife_view_front"
+            android:layout_toRightOf="@+id/ife_view_front" />
+
+        <ImageView
+            android:id="@+id/top1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/right1"
+            android:layout_toStartOf="@+id/right1"
+            android:layout_toRightOf="@+id/left1"
+            android:layout_toEndOf="@+id/left1"
+            android:layout_above="@+id/ife_view_front"/>
+        <ImageView
+            android:id="@+id/bottom1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/right1"
+            android:layout_toStartOf="@+id/right1"
+            android:layout_toRightOf="@+id/left1"
+            android:layout_toEndOf="@+id/left1"
+            android:layout_below="@+id/ife_view_front"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/rl_ife_view_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/view_top"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/ife_view_back"
+            app:layout_widthPercent="90%"
+            app:layout_aspectRatio="160%"
+            android:layout_margin="2dp"
+            android:background="@drawable/ife_shape_back"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/left2"
+            app:layout_widthPercent="9%"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/ife_view_back"
+            android:layout_toStartOf="@+id/ife_view_back"/>
+
+        <ImageView
+            android:id="@+id/right2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/ife_view_back"
+            android:layout_toRightOf="@+id/ife_view_back" />
+
+        <ImageView
+            android:id="@+id/top2"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/right2"
+            android:layout_toStartOf="@+id/right2"
+            android:layout_toRightOf="@+id/left2"
+            android:layout_toEndOf="@+id/left2"
+            android:layout_above="@+id/ife_view_back"/>
+        <ImageView
+            android:id="@+id/bottom2"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/right2"
+            android:layout_toStartOf="@+id/right2"
+            android:layout_toRightOf="@+id/left2"
+            android:layout_toEndOf="@+id/left2"
+            android:layout_below="@+id/ife_view_back"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/rl_ine_view_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/view_top"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/ine_view_back"
+            app:layout_widthPercent="90%"
+            app:layout_aspectRatio="160%"
+            android:layout_margin="2dp"
+            android:background="@drawable/ine_back"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/left3"
+            app:layout_widthPercent="9%"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/ine_view_back"
+            android:layout_toStartOf="@+id/ine_view_back"/>
+
+        <ImageView
+            android:id="@+id/right3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/ine_view_back"
+            android:layout_toRightOf="@+id/ine_view_back" />
+
+        <ImageView
+            android:id="@+id/top3"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/right3"
+            android:layout_toStartOf="@+id/right3"
+            android:layout_toRightOf="@+id/left3"
+            android:layout_toEndOf="@+id/left3"
+            android:layout_above="@+id/ine_view_back"/>
+        <ImageView
+            android:id="@+id/bottom3"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/background_black"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/right3"
+            android:layout_toStartOf="@+id/right3"
+            android:layout_toRightOf="@+id/left3"
+            android:layout_toEndOf="@+id/left3"
+            android:layout_below="@+id/ine_view_back"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/button_shutter"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/camara_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:elevation="5dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidOCR</string>
+    <string name="iniciar_ocr">Iniciar OCR</string>
+</resources>
