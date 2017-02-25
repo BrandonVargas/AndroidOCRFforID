@@ -64,3 +64,22 @@ Para recuperar los datos
 * Mejorar Algoritmos de detección
 * Mejorar Algortimo para tomar foto y recortar
 * Resolver problemas con smartphones Samsung
+
+# Librerias de terceros
+* A old version of uCrop https://github.com/Yalantis/uCrop
+* Mobile Vision https://developers.google.com/vision/
+
+# Licencia/License
+Copyright [2017] [Brandon Vargas]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
