@@ -65,7 +65,7 @@ Para recuperar los datos
 * Mejorar Algortimo para tomar foto y recortar
 * Resolver problemas con smartphones Samsung
 
-# Librerias de terceros
+# Bibliotecas de terceros
 * A old version of uCrop https://github.com/Yalantis/uCrop
 * Mobile Vision https://developers.google.com/vision/
 
