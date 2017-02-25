@@ -7,7 +7,7 @@ File -> New -> Import Module,seleccionar el modulo OCR de este proyecto, se agre
 File -> Project Structure -> Modules/app -> Pestaña Dependencias -> + -> Module dependency -> :ocr
 
 Añadir al Manifest 
-´´´xml
+Markup :'
 <activity
     android:name="mx.brandonvargas.ocrforid.OcrIdActivity"
     android:screenOrientation="portrait"
@@ -18,4 +18,4 @@ Añadir al Manifest
     android:screenOrientation="portrait"
     android:theme="@style/AppTheme.NoActionBar"
     />
-'''
+'
